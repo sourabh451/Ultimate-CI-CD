@@ -55,6 +55,7 @@ pipeline {
                 sh '''
                     git config --global user.email "er.sourabhapatil@gmail.com"
                     git config --global user.name "Sourabha Patil"
+                    git config --global --add safe.directory /var/lib/jenkins/workspace/ultimate-demo
                     BUILD_NUMBER=${BUILD_NUMBER}
                     sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" java/spring-boot-app-manifests/deployment.yml
                     git add java/spring-boot-app-manifests/deployment.yml
